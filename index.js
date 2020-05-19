@@ -38,7 +38,8 @@ client.on('message', async message => {
         stop(message, serverQueue);
         return;
     } else if (message.content.startsWith(`${prefix}Du`)) {
-        execute(`?!play https://www.youtube.com/watch?v=jCvaocRA2YM`, serverQueue);
+        message.content = `?!play https://www.youtube.com/watch?v=jCvaocRA2YM`;
+        execute(message, serverQueue);
         return;
     } else {
         message.channel.send("Comando não existe, seu macaco");
@@ -59,7 +60,7 @@ async function execute(message, serverQueue) {
         "GORILA MONSTRUSO EU NÃO TENHO PERMISSÃO PRA ISSO!"
       );
     }
-  
+
     const songInfo = await ytdl.getInfo(args[1]);
     const song = {
       title: songInfo.title,
