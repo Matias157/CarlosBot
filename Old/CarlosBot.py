@@ -45,106 +45,6 @@ async def on_message(message):
 		except Exception as Hugo:
 			await client.send_message(message.channel, "Ein Error: ```{haus}```".format(haus=Hugo))
 
-	if message.content.startswith('?!matheusbruna'):
-		try:
-			yt_url = 'https://www.youtube.com/watch?v=XlipZq2eN_Q'
-			if client.is_voice_connected(message.server):
-				try:
-					voice = client.voice_client_in(message.server)
-					players[message.server.id].stop()
-					player = await voice.create_ytdl_player(yt_url)
-					players[message.server.id] = player
-					player.start()
-				except Exception as e:
-					await client.send_message(message.server, "Error: [{error}]".format(error=e))
-
-			if not client.is_voice_connected(message.server):
-				try:
-					channel = message.author.voice.voice_channel
-					voice = await client.join_voice_channel(channel)
-					player = await voice.create_ytdl_player(yt_url)
-					players[message.server.id] = player
-					player.start()
-				except Exception as error:
-					await client.send_message(message.channel, "Error: [{error}]".format(error=error))
-		except Exception as e:
-			await client.send_message(message.channel, "Error: [{error}]".format(error=e))
-
-	if message.content.startswith('?!matheusguerracivil'):
-		try:
-			yt_url = 'https://www.youtube.com/watch?v=_gsFT9IFuYU'
-			if client.is_voice_connected(message.server):
-				try:
-					voice = client.voice_client_in(message.server)
-					players[message.server.id].stop()
-					player = await voice.create_ytdl_player(yt_url)
-					players[message.server.id] = player
-					player.start()
-				except Exception as e:
-					await client.send_message(message.server, "Error: [{error}]".format(error=e))
-
-			if not client.is_voice_connected(message.server):
-				try:
-					channel = message.author.voice.voice_channel
-					voice = await client.join_voice_channel(channel)
-					player = await voice.create_ytdl_player(yt_url)
-					players[message.server.id] = player
-					player.start()
-				except Exception as error:
-					await client.send_message(message.channel, "Error: [{error}]".format(error=error))
-		except Exception as e:
-			await client.send_message(message.channel, "Error: [{error}]".format(error=e))
-
-	if message.content.startswith('?!detodasascoisasgays'):
-		try:
-			yt_url = 'https://www.youtube.com/watch?v=ZAbJIjtTlJU'
-			if client.is_voice_connected(message.server):
-				try:
-					voice = client.voice_client_in(message.server)
-					players[message.server.id].stop()
-					player = await voice.create_ytdl_player(yt_url)
-					players[message.server.id] = player
-					player.start()
-				except Exception as e:
-					await client.send_message(message.server, "Error: [{error}]".format(error=e))
-
-			if not client.is_voice_connected(message.server):
-				try:
-					channel = message.author.voice.voice_channel
-					voice = await client.join_voice_channel(channel)
-					player = await voice.create_ytdl_player(yt_url)
-					players[message.server.id] = player
-					player.start()
-				except Exception as error:
-					await client.send_message(message.channel, "Error: [{error}]".format(error=error))
-		except Exception as e:
-			await client.send_message(message.channel, "Error: [{error}]".format(error=e))
-
-	if message.content.startswith('?!WAAAA'):
-		try:
-			yt_url = 'https://www.youtube.com/watch?v=ui-bnDYjwJY'
-			if client.is_voice_connected(message.server):
-				try:
-					voice = client.voice_client_in(message.server)
-					players[message.server.id].stop()
-					player = await voice.create_ytdl_player(yt_url)
-					players[message.server.id] = player
-					player.start()
-				except Exception as e:
-					await client.send_message(message.server, "Error: [{error}]".format(error=e))
-
-			if not client.is_voice_connected(message.server):
-				try:
-					channel = message.author.voice.voice_channel
-					voice = await client.join_voice_channel(channel)
-					player = await voice.create_ytdl_player(yt_url)
-					players[message.server.id] = player
-					player.start()
-				except Exception as error:
-					await client.send_message(message.channel, "Error: [{error}]".format(error=error))
-		except Exception as e:
-			await client.send_message(message.channel, "Error: [{error}]".format(error=e))
-
 	if message.content.startswith('?!pause'):
 		try:
 			mscpause = discord.Embed(
@@ -156,6 +56,7 @@ async def on_message(message):
 			players[message.server.id].pause()
 		except Exception as error:
 			await client.send_message(message.channel, "Error: [{error}]".format(error=error))
+			
 	if message.content.startswith('!resume'):
 		try:
 			mscresume = discord.Embed(
