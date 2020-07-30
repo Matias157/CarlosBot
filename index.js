@@ -41,7 +41,23 @@ client.on('message', async message => {
         message.content = `?!play https://www.youtube.com/watch?v=jCvaocRA2YM`;
         execute(message, serverQueue);
         return;
-    } else {
+    } else if (message.content.startsWith(`${prefix}MatheusBruna`)) {
+        message.content = `?!play https://www.youtube.com/watch?v=XlipZq2eN_Q`;
+        execute(message, serverQueue);
+        return;
+    } else if (message.content.startsWith(`${prefix}MatheusGuerraCivil`)) {
+        message.content = `?!play https://www.youtube.com/watch?v=_gsFT9IFuYU`;
+        execute(message, serverQueue);
+        return;
+    } else if (message.content.startsWith(`${prefix}DeTodasAsCoisasGays`)) {
+        message.content = `?!play https://www.youtube.com/watch?v=ZAbJIjtTlJU`;
+        execute(message, serverQueue);
+        return;
+    } else if (message.content.startsWith(`${prefix}Waaaaa`)) {
+        message.content = `?!play https://www.youtube.com/watch?v=ui-bnDYjwJY`;
+        execute(message, serverQueue);
+        return;
+  } else {
         message.channel.send("Comando não existe, seu macaco");
     }
 });
